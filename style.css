@@ -56,6 +56,7 @@ header {
   top: 0;
   border-bottom: 1px solid var(--line);
   background-color: var(--ground);
+  z-index: 999;
 }
 
 header a {
@@ -161,7 +162,7 @@ section {
   text-decoration: none;
   border-bottom: 1px solid black;
   color: var(--ink);
-  transform: color 0.15s;
+  transition: all 0.2s ease;
   display: inline-block;
 }
 
@@ -182,12 +183,19 @@ section {
   padding-top: 36px;
 }
 
+.content__card-container {
+  transition: transform 0.4s;
+}
+
+.content__card-container:hover {
+  transform: scale(1.03);
+}
 .content__card img {
   display: block;
   max-width: 100%;
   aspect-ratio: 3/4;
   border-radius: 8px;
-  box-shadow: 0 4px 12px;
+  box-shadow: 0 4px 12px var(--ink);
 }
 
 .content__card h3 {
@@ -211,7 +219,7 @@ section {
   border-radius: 999px;
   border: 1px solid var(--ink);
   cursor: pointer;
-  transition: color 0.5s;
+  transition: all 0.3s ease;
 }
 
 .content__card-price button:hover {
@@ -221,4 +229,26 @@ section {
 
 .staff-pick {
   background-color: var(--ink);
+}
+
+.staff-pick .content {
+  color: var(--card);
+}
+
+.staff-pick a {
+  color: var(--card);
+  border-bottom: 1px solid var(--card);
+}
+
+.staff-pick .content__card {
+  color: white;
+}
+
+.staff-pick .content__card-price button {
+  border: 1px solid var(--ground);
+  color: var(--ground);
+  transition: all 0.3s ease;
+}
+.staff-pick .content__card-price button:hover {
+  background-color: var(--accent);
 }
