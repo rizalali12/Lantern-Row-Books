@@ -82,6 +82,7 @@ section {
 .header__nav-link a {
   transition: transform 0.15s;
   display: inline-block;
+  color: var(--muted);
 }
 
 .header__nav-link a:hover {
@@ -156,6 +157,8 @@ section {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .content a {
@@ -251,4 +254,124 @@ section {
 }
 .staff-pick .content__card-price button:hover {
   background-color: var(--accent);
+}
+.content__card-event-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 36px;
+}
+
+.content__card-event {
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+
+  gap: 20px;
+  box-shadow: 0 8px 12px;
+}
+
+.content__card-event-date {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--ink);
+  color: white;
+  align-self: flex-start;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.content__card-event-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.content__card-event-description p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.content__card-event-description-time {
+  font-weight: 600;
+}
+
+.content__card-event-description a {
+  padding-top: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  align-self: flex-start;
+  transition: all 0.4s ease;
+  font-weight: 700;
+}
+
+.content__card-event-description a:hover {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 10px var(--gutter);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 48px;
+  }
+  .hero__image {
+    height: 300px;
+  }
+
+  .content__card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content__card-event-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 642px) {
+  section {
+    padding: 40px var(--gutter);
+  }
+  .header__nav-link {
+    flex-wrap: wrap;
+    font-size: 13px;
+    justify-content: center;
+  }
+  header {
+    flex-direction: column;
+    row-gap: 14px;
+  }
+  .hero__title {
+    font-size: 30px;
+  }
+  .hero__image {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content__card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .content__card-event-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 320px) {
+  .content__card-event {
+    flex-wrap: wrap;
+  }
 }
