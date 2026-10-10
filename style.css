@@ -64,6 +64,29 @@ header a {
   color: var(--ink);
 }
 
+.menu-toggle {
+  opacity: 0;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  gap: 5px;
+}
+
+.burger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background-color: #222;
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+
 .logo {
   text-decoration: none;
   font-size: 26px;
@@ -340,15 +363,42 @@ footer {
   section {
     padding: 40px var(--gutter);
   }
+
+  .burger {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--ground);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .menu-toggle:checked ~ nav {
+    max-height: 400px;
+    padding: 13px 0;
+  }
+
+  .menu-toggle:checked ~ .burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .burger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .header__nav-link {
-    flex-wrap: wrap;
-    font-size: 13px;
-    justify-content: center;
-  }
-  header {
     flex-direction: column;
-    row-gap: 14px;
   }
+
   .hero__title {
     font-size: 30px;
   }
