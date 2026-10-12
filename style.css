@@ -411,6 +411,10 @@ footer {
     text-align: center;
   }
 
+  .hero__button {
+    justify-content: center;
+  }
+
   .content__card {
     grid-template-columns: repeat(1, 1fr);
   }
