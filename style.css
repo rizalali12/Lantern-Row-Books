@@ -22,6 +22,10 @@
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 75px;
+}
+
 body {
   background-color: var(--ground);
   font-family: var(--font-body);
