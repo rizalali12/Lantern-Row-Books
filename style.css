@@ -412,6 +412,7 @@ footer {
 
   .hero {
     justify-content: center;
+    padding-left: 50px;
     text-align: center;
   }
 
