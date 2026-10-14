@@ -1,1 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Young Serif", Georgia, serif;
+  --font-body: "Young Serif", Georgia, serif;
+}
+
+:root {
+  --ground: #f4f1ea; /* page background */
+  --band: #ebe6da; /* fiction section background */
+  --ink: #16202a; /* main text, buttons, dark sections */
+  --muted: #55606b; /* author names, event meta */
+  --body-soft: #3a4753; /* hero paragraph */
+  --accent: #b83d24; /* eyebrows, hover, focus ring */
+  --accent-soft: #f2a07f; /* accent on dark sections */
+  --on-dark: #f4f1ea; /* text on dark sections */
+  --on-dark-mute: #b9c2cb; /* author names on dark */
+  --card: #ffffff; /* event cards */
+  --line: #ddd6c6; /* event card border */
+  --font-display: "Young Serif", Georgia, serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+  --pre-title-size: 13px;
+  --title-size: 44px;
+  --gutter: max(20px, calc((100% - 1200px)) / 2);
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--ground);
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.2;
+}
