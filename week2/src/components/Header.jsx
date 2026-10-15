@@ -18,7 +18,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="relative flex items-center justify-between border-b border-b-(--line) bg-(--ground) px-(--gutter) py-4 font-medium text-(--ink)">
+    <header className="relative flex items-center justify-between border-b border-b-(--line) bg-(--ground) px-(--gutter) py-3 font-medium text-(--ink)">
       <a href="#hero" className="font-display text-2xl">
         Lantern Row Books
       </a>
