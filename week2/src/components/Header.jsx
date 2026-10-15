@@ -18,7 +18,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="relative flex items-center justify-between border-b border-b-(--line) bg-(--ground) px-(--gutter) py-3 font-medium text-(--ink)">
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-b-(--line) bg-(--ground) px-(--gutter) py-3 font-medium text-(--ink)">
       <a href="#hero" className="font-display text-2xl">
         Lantern Row Books
       </a>
@@ -38,7 +38,7 @@ export const Header = () => {
       </button>
 
       <nav
-        className={`${isOpen ? "visible translate-y-0 border-b border-b-(--line) opacity-100" : "invisible -translate-y-2 opacity-0"} absolute inset-x-0 top-full py-3 transition-all duration-200 ease-out md:visible md:static md:translate-y-0 md:opacity-100`}
+        className={`${isOpen ? "visible translate-y-0 border-b border-b-(--line) bg-(--ground) opacity-100" : "invisible -translate-y-2 opacity-0"} absolute inset-x-0 top-full py-3 transition-all duration-200 ease-out md:visible md:static md:translate-y-0 md:opacity-100`}
       >
         <ul className="flex flex-col items-center gap-8 text-[16px] md:flex-row">
           {navItems.map((item) => (
