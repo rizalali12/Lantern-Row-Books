@@ -1,0 +1,104 @@
+{
+  "fiction": [
+    {
+      "title": "The Salt Orchard",
+      "author": "Mara Ellison",
+      "image": "image/c01-salt-orchard.webp",
+      "alt": "Cover of The Salt Orchard by Mara Ellison: cream and sage circles like trees on a deep green background",
+      "price": 18,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "Night Ferry",
+      "author": "Tomas Reyes",
+      "image": "image/c02-night-ferry.webp",
+      "alt": "Cover of Night Ferry by Tomas Reyes: a pale moon above golden waves on a navy background",
+      "price": 19,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "The Cartographer's Daughter",
+      "author": "Ines Valdar",
+      "image": "image/c03-cartographer.webp",
+      "alt": "Cover of The Cartographer's Daughter by Ines Valdar: a dotted route across a gridded map on a mustard yellow background",
+      "price": 17,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "Small Hours",
+      "author": "Priya Anand",
+      "image": "image/c04-small-hours.webp",
+      "alt": "Cover of Small Hours by Priya Anand: a golden half sun above horizontal lines on a brick red background",
+      "price": 16,
+      "buttonText": "Add to bag"
+    }
+  ],
+  "nonfiction": [
+    {
+      "title": "Fieldwork",
+      "author": "Hana Okafor",
+      "image": "image/c05-fieldwork.webp",
+      "alt": "Cover of Fieldwork by Hana Okafor: a grid of green squares in varying shades on a pale sage background",
+      "price": 22,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "The Slow Ocean",
+      "author": "Jonas Brandt",
+      "image": "image/c06-slow-ocean.webp",
+      "alt": "Cover of The Slow Ocean by Jonas Brandt: stacked bands of blue like ocean layers under a small yellow sun",
+      "price": 29,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "Bread, Salt, Time",
+      "author": "Lucia Ferrante",
+      "image": "image/c07-bread-salt-time.webp",
+      "alt": "Cover of Bread, Salt, Time by Lucia Ferrante: a round golden loaf with scoring marks on a cream background",
+      "price": 20,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "How Cities Remember",
+      "author": "A. Winters",
+      "image": "image/c08-cities-remember.webp",
+      "alt": "Cover of How Cities Remember by A. Winters: grey city buildings with lit yellow windows on a charcoal background",
+      "price": 26,
+      "buttonText": "Add to bag"
+    }
+  ],
+  "staffPicks": [
+    {
+      "title": "Paper Moons",
+      "author": "Elio Marchetti",
+      "image": "image/c09-paper-moons.webp",
+      "alt": "Cover of Paper Moons by Elio Marchetti: a cream crescent moon and small stars on a deep purple background",
+      "price": 30,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "The Last Good Cafe",
+      "author": "Wren Adair",
+      "image": "image/c10-last-good-cafe.webp",
+      "alt": "Cover of The Last Good Cafe by Wren Adair: a steaming maroon coffee cup on a pink background",
+      "price": 19,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "Understory",
+      "author": "Kofi Mensah",
+      "image": "image/c11-understory.webp",
+      "alt": "Cover of Understory by Kofi Mensah: overlapping green leaves on a dark forest green background",
+      "price": 17,
+      "buttonText": "Add to bag"
+    },
+    {
+      "title": "Letters to a Young Reader",
+      "author": "Sam Orolov",
+      "image": "image/c12-letters.webp",
+      "alt": "Cover of Letters to a Young Reader by Sam Orolov: a sealed envelope with a red wax seal on a yellow background",
+      "price": 15,
+      "buttonText": "Add to bag"
+    }
+  ]
+}
