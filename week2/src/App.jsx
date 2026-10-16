@@ -1,3 +1,4 @@
+import { BookCategory } from "./components/BookCategory";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <Header />
       <Hero />
+      <BookCategory />
     </div>
   );
 }
