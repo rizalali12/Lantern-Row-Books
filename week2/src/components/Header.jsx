@@ -7,7 +7,7 @@ export const Header = () => {
   const bar = "h-0.5 w-6 bg-current transition-all duration-200";
 
   const navItems = [
-    { label: "Home", href: "#home" },
+    { label: "Home", href: "#hero" },
     { label: "Books", href: "#books" },
     { label: "Events", href: "#events" },
   ];
