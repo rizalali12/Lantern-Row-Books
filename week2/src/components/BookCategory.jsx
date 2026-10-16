@@ -19,7 +19,7 @@ export const BookCategory = () => {
     }
   };
   return (
-    <section className={gutter}>
+    <section className={`${gutter} bg-(--band)`}>
       <div className="flex items-end justify-between">
         <div>
           <p className={preTitle}>on the shelves</p>
