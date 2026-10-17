@@ -18,13 +18,21 @@ export const Hero = () => {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-8 md:justify-start">
           <button
-            onClick={goToId("books")}
+            onClick={() => {
+              goToId("books");
+            }}
             type="button"
             className={`${button} bg-(--ink) text-white`}
           >
             Browse the shelves
           </button>
-          <button type="button" className={button}>
+          <button
+            type="button"
+            className={button}
+            onClick={() => {
+              goToId("event");
+            }}
+          >
             See upcoming events
           </button>
         </div>
