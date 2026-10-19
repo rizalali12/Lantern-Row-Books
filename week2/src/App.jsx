@@ -6,13 +6,13 @@ import { Hero } from './components/Hero'
 
 function App() {
   return (
-    <div>
+    <main>
       <Header />
       <Hero />
       <BookCategory />
       <Event />
       <Footer />
-    </div>
+    </main>
   )
 }
 
