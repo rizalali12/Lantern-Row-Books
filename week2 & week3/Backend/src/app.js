@@ -2,12 +2,14 @@ const express = require('express')
 const userRoutes = require('./routes/user')
 const requestLogger = require('./middleware/requestLogger')
 const errorLogger = require('./middleware/errorHandler.js')
+const bookRoutes = require('./routes/book')
 
 const app = express()
 app.use(express.json())
 app.use(requestLogger)
 
-app.use('/users', userRoutes)
+app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/book', bookRoutes)
 
 app.use(errorLogger)
 
