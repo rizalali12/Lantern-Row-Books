@@ -1,24 +1,35 @@
-import { useState } from 'react'
-import books from '../data/books.json'
+import { useEffect, useState } from 'react'
 import { UiButton } from './ui/Button'
 import { gutter, preTitle } from '../utility/style'
 import { UiCard } from './ui/Card'
+import bookRepository from '../repository/bookRepository'
 
 export const BookCategory = () => {
   const categories = ['Fiction', 'Nonfiction', 'Staff Picks']
   const [category, setCategory] = useState('Fiction')
-  const booksData = (bookCategory) => {
-    switch (bookCategory) {
-      case 'Fiction':
-        return books.fiction
-      case 'Nonfiction':
-        return books.nonfiction
-      case 'Staff Picks':
-        return books.staffPicks
-      default:
-        return []
-    }
+  const [bookData, setBookData] = useState([])
+  const categoryMap = {
+    Fiction: 'fiction',
+    Nonfiction: 'nonfiction',
+    'Staff Picks': 'staff_picks',
   }
+
+  useEffect(() => {
+    const fetchBook = async () => {
+      try {
+        const result = await bookRepository.getBook({
+          category: categoryMap[category],
+        })
+
+        setBookData(result.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchBook()
+  }, [category])
+
   return (
     <section className={`${gutter} bg-(--line)`} id="books">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -42,8 +53,8 @@ export const BookCategory = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-8 pt-8 sm:grid-cols-2 lg:grid-cols-4">
-        {booksData(category).map((book, index) => (
-          <UiCard data={book} key={index} />
+        {bookData.map((book) => (
+          <UiCard data={book} key={book.id} />
         ))}
       </div>
     </section>
