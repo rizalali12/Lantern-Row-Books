@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export const Header = () => {
+export const Header = ({ user, onOpenAccount, onSignOut }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState(null)
+  const menuRef = useRef(null)
 
   const bar = 'h-0.5 w-6 bg-current transition-all duration-200'
 
@@ -34,6 +36,17 @@ export const Header = () => {
       observer.observe(element)
     })
   }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onClick = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onClick)
+    return () => document.removeEventListener('mousedown', onClick)
+  }, [menuOpen])
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-b-(--line) bg-(--ground) px-(--gutter) py-3 font-medium text-(--ink)">
@@ -70,6 +83,46 @@ export const Header = () => {
               </a>
             </li>
           ))}
+
+          {user ? (
+            <li ref={menuRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setMenuOpen((prev) => !prev)}
+                className="inline-block cursor-pointer rounded-[999px] px-3 py-1 transition-all duration-200 hover:-translate-y-1 hover:bg-(--accent) hover:text-white"
+              >
+                {user.username}
+              </button>
+
+              {menuOpen && (
+                <div className="absolute top-full left-1/2 z-50 mt-2 w-40 -translate-x-1/2 rounded-xl border border-(--line) bg-(--card) py-1 shadow-2xl">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false)
+                      onSignOut()
+                    }}
+                    className="block w-full px-4 py-2 text-left text-[15px] transition-colors hover:bg-(--ground) hover:text-(--accent)"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              )}
+            </li>
+          ) : (
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  handleNavLink()
+                  onOpenAccount()
+                }}
+                className="inline-block cursor-pointer rounded-[999px] px-3 py-1 transition-all duration-200 hover:-translate-y-1 hover:bg-(--accent) hover:text-white"
+              >
+                Account
+              </button>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

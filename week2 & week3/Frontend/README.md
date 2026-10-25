@@ -1,16 +1,37 @@
-# React + Vite
+# Lantern Row Books - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19 single-page app built with Vite and Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20 or newer
+- The backend running on `http://localhost:3000` (see the backend README)
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
 
-## Expanding the ESLint configuration
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Create a `.env` file with the API base URL:
+
+   ```bash
+   echo "VITE_API_URL=http://localhost:3000/api/v1" > .env
+   ```
+
+3. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app is served at `http://localhost:5173`.
+
+## Scripts
+
+- `npm run dev` - start the Vite dev server
+- `npm run build` - build for production into `dist/`
+- `npm run preview` - preview the production build locally
+- `npm run lint` - run ESLint

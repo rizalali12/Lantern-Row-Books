@@ -6,9 +6,11 @@ const bookRoutes = require('./routes/book')
 const eventRoutes = require('./routes/event')
 const cors = require('cors')
 const env = require('./config/config')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 app.use(express.json())
+app.use(cookieParser())
 app.use(requestLogger)
 app.use(cors({
   origin: env.frontendUrl,

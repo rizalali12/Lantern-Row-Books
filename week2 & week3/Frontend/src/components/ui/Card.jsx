@@ -1,5 +1,3 @@
-import { UiButton } from "./Button";
-
 export const UiCard = ({ data }) => {
   return (
     <div className="transition-all duration-300 ease-out hover:scale-102">
@@ -12,13 +10,15 @@ export const UiCard = ({ data }) => {
         <h3>{data.title}</h3>
         <p className="font-extralight text-(--muted)">{data.author} </p>
       </div>
-      <div className="flex items-center justify-between pt-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
         <p className="text-(--ink)">{`$${data.price}`}</p>
-        <UiButton text="Add to cart" />
+        <span className="flex min-h-8 items-center rounded border border-[#cfc7b4] bg-(--ground) px-3 text-xs font-semibold tracking-[0.1em] text-(--body-soft) uppercase">
+          {data.shelf}
+        </span>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const UiEventCard = ({ data }) => {
   return (
@@ -38,5 +38,5 @@ export const UiEventCard = ({ data }) => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}

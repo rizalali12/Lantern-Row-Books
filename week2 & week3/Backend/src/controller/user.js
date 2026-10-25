@@ -3,7 +3,7 @@ const response = require('../middleware/responseHandler')
 
 const getUser = async (req, res, next) => {
   try {
-    const token = req.headers.authorization?.replace('Bearer ', '')
+    const token = req.cookies?.token || req.headers.authorization?.replace('Bearer ', '')
 
     const users = await userService.getUserData(token)
 
@@ -56,10 +56,12 @@ const login = async (req, res, next) => {
 
 const logout = async (req, res, next) => {
   try {
-    const token = req.headers.authorization?.replace('Bearer ', '')
+    const token = req.cookies?.token || req.headers.authorization?.replace('Bearer ', '')
     const { username } = req.body
 
     await userService.logout(username, token)
+
+    res.clearCookie('token', { path: '/' })
 
     res.status(200).json({
       message: "logout success"
