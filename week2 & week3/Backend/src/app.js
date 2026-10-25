@@ -4,10 +4,16 @@ const requestLogger = require('./middleware/requestLogger')
 const errorLogger = require('./middleware/errorHandler.js')
 const bookRoutes = require('./routes/book')
 const eventRoutes = require('./routes/event')
+const cors = require('cors')
+const env = require('./config/config')
 
 const app = express()
 app.use(express.json())
 app.use(requestLogger)
+app.use(cors({
+  origin: env.frontendUrl,
+  credentials: true
+}))
 
 app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/book', bookRoutes)
