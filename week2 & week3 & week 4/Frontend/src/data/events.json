@@ -1,0 +1,34 @@
+[
+  {
+    "title": "An evening with Mara Ellison",
+    "month": "Oct",
+    "day": 24,
+    "weekday": "Thursday",
+    "time": "7:00 pm",
+    "type": "Event",
+    "description": "Mara reads from The Salt Orchard and talks about writing fiction on the coast.",
+    "buttonText": "Save a seat"
+  },
+  {
+    "title": "Fiction book club",
+    "month": "Oct",
+    "day": 15,
+    "weekday": "Saturday",
+    "time": "4:00 pm",
+    "type": "Book club",
+    "description": "This month: Night Ferry. Tea, snacks and honest opinions are all welcome.",
+    "buttonText": "Join the club"
+
+  },
+  {
+    "title": "Nonfiction circle",
+    "month": "Nov",
+    "day": 13,
+    "weekday": "Wednesday",
+    "time": "6:30 pm",
+    "type": "Event",
+    "description": "We read Fieldwork and compare notes. No homework if the week got away from you.",
+    "buttonText": "Join the circle"
+
+  }
+]
