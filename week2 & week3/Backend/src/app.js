@@ -7,8 +7,12 @@ const eventRoutes = require('./routes/event')
 const cors = require('cors')
 const env = require('./config/config')
 const cookieParser = require('cookie-parser')
+const { paymentWebhook } = require('./controller/purchases')
+const purchasesRoutes = require('./routes/purchases')
 
 const app = express()
+app.post('/api/v1/payments/webhook', express.raw({ type: 'application/json' }), paymentWebhook)
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(requestLogger)
@@ -20,6 +24,7 @@ app.use(cors({
 app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/book', bookRoutes)
 app.use('/api/v1/event', eventRoutes)
+app.use('/api/v1/purchases', purchasesRoutes)
 
 app.use(errorLogger)
 
