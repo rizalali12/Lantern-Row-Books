@@ -1,4 +1,4 @@
-export const UiCard = ({ data }) => {
+export const UiCard = ({ data, isPurchasesBook, onBuy, isBuying }) => {
   return (
     <div className="transition-all duration-300 ease-out hover:scale-102">
       <img
@@ -12,9 +12,30 @@ export const UiCard = ({ data }) => {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
         <p className="text-(--ink)">{`$${data.price}`}</p>
-        <span className="flex min-h-8 items-center rounded border border-[#cfc7b4] bg-(--ground) px-3 text-xs font-semibold tracking-[0.1em] text-(--body-soft) uppercase">
-          {data.shelf}
-        </span>
+        {isPurchasesBook ? (
+          <span className="flex min-h-8 items-center gap-1.5 rounded-full bg-(--ink) px-3 text-xs font-semibold tracking-widest text-white uppercase">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="size-3.5">
+              <path
+                d="M4.5 10.5l3.5 3.5 7.5-8"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Owned
+          </span>
+        ) : (
+          <button
+            type="button"
+            onClick={() => onBuy(data.id)}
+            disabled={isBuying}
+            aria-busy={isBuying}
+            className="flex min-h-8 cursor-pointer items-center rounded-full border border-(--ink) px-3 text-xs font-semibold tracking-widest uppercase transition-all duration-200 ease-out hover:bg-(--ink) hover:text-white disabled:cursor-wait disabled:opacity-60"
+          >
+            {isBuying ? 'Redirecting…' : 'Buy'}
+          </button>
+        )}
       </div>
     </div>
   )
